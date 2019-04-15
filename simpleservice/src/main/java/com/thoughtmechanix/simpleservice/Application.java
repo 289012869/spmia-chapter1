@@ -16,10 +16,14 @@ public class Application {
         SpringApplication.run(Application.class, args);
     }
 
-    @RequestMapping(value="/{firstName}/{lastName}",method = RequestMethod.GET)
-    public String hello( @PathVariable("firstName") String firstName,
-                         @PathVariable("lastName") String lastName) {
-
-        return String.format("{\"message\":\"Hello %s %s\"}", firstName, lastName);
+//    @RequestMapping(value="/{firstName}/{lastName}",method = RequestMethod.GET)
+//    public String hello( @PathVariable("firstName") String firstName,
+//                         @PathVariable("lastName") String lastName) {
+//
+//        return String.format("{\"message\":\"Hello %s %s\"}", firstName, lastName);
+//    }
+    @RequestMapping(value = "/{kkm}/{ddm}",method = RequestMethod.GET)
+    public String say(@PathVariable("kkm")Integer kkm,@PathVariable("ddm") String ddm){
+        return String.format("{\"message\":\"Hello %s %s\"}", kkm, ddm);
     }
 }
